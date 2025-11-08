@@ -17,14 +17,14 @@ const Awards = () => {
   return (
     <>
       <Helmet>
-        <title>{awardsData?.SEO?.SEO_Title || 'Awards | Ramin Tahbaz'}</title>
+        <title>{awardsData?.SEO?.SEO_Title || 'Awards | Pattern 23'}</title>
         <meta 
           name="description" 
           content={awardsData?.SEO?.SEO_Description || "Awards and recognitions"} 
         />
         <meta 
           property="og:title" 
-          content={awardsData?.SEO?.SEO_Title || 'Awards | Ramin Tahbaz'} 
+          content={awardsData?.SEO?.SEO_Title || 'Awards | Pattern 23'} 
         />
         <meta 
           property="og:description" 

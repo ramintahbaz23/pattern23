@@ -11,14 +11,14 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>{homeData?.SEO?.SEO_Title || 'Ramin Tahbaz'}</title>
+        <title>{homeData?.SEO?.SEO_Title || 'Pattern 23'}</title>
         <meta 
           name="description" 
           content={homeData?.SEO?.SEO_Description || "Welcome to Ramin's portfolio"} 
         />
         <meta 
           property="og:title" 
-          content={homeData?.SEO?.SEO_Title || 'Ramin Tahbaz'} 
+          content={homeData?.SEO?.SEO_Title || 'Pattern 23'} 
         />
         <meta 
           property="og:description" 

@@ -33,8 +33,7 @@ const Home = () => {
           {/* --- STATIC TEXT REPLACING "NO CONTENT AVAILABLE" --- */}
           <div className="mb-[70px] md:mb-[170px] max-w-xl">
             <p className="text-[16px] md:text-[16pt] text-gray-900 dark:text-white">
-              Pattern 23 is a design research lab focused on the co-evolution of human and machine intelligence—
-              crafting interfaces, behaviors, and systems for our shared future.
+              Design research lab exploring the co-evolution of human and machine intelligence and crafting the interfaces, behaviors, and systems of our shared future.
             </p>
           </div>
 

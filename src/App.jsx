@@ -9,7 +9,6 @@ import Awards from './pages/Awards';
 import Works from './pages/Works';
 import Work from './pages/Work';
 import Rhythm from './pages/Rhythm';
-import { strapiService } from './services/api';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,28 +21,6 @@ const queryClient = new QueryClient({
       retry: false,
     },
   },
-});
-
-// Prefetch all data
-queryClient.prefetchQuery({
-  queryKey: ['home'],
-  queryFn: strapiService.getHomePage,
-});
-queryClient.prefetchQuery({
-  queryKey: ['info'],
-  queryFn: strapiService.getInfo,
-});
-queryClient.prefetchQuery({
-  queryKey: ['awards'],
-  queryFn: strapiService.getAwards,
-});
-queryClient.prefetchQuery({
-  queryKey: ['works'],
-  queryFn: strapiService.getWorks,
-});
-queryClient.prefetchQuery({
-  queryKey: ['setting'],
-  queryFn: strapiService.getSettings,
 });
 
 const App = () => {

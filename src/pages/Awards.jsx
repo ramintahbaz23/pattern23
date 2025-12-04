@@ -2,17 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useAwardsData } from '../hooks/useStrapiData';
-import LoadingSpinner from '../components/common/LoadingSpinner';
 import AwardItem from '../components/AwardItem';
-import ErrorView from '../components/common/ErrorView';
 import PageLayout from '../components/layout/PageLayout';
 
 const Awards = () => {
-  const { data: response, isLoading, error, refetch } = useAwardsData();
+  const { data: response } = useAwardsData();
   const awardsData = response?.data || null;
-
-  if (isLoading) return <LoadingSpinner size="lg" />;
-  if (error) return <ErrorView message={error.message} onRetry={refetch} />;
 
   return (
     <>

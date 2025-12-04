@@ -30,10 +30,10 @@ const Home = () => {
       <PageLayout>
         <div className="flex flex-col">
 
-          {/* --- STATIC TEXT REPLACING “NO CONTENT AVAILABLE” --- */}
+          {/* --- STATIC TEXT REPLACING "NO CONTENT AVAILABLE" --- */}
           <div className="mb-[70px] md:mb-[170px] max-w-xl">
             <p className="text-[16px] md:text-[16pt] text-gray-900 dark:text-white">
-              Design research lab focused on the co-evolution of human and machine intelligence—
+              Pattern 23 is a design research lab focused on the co-evolution of human and machine intelligence—
               crafting interfaces, behaviors, and systems for our shared future.
             </p>
           </div>

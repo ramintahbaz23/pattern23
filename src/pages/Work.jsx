@@ -49,8 +49,8 @@ const Work = () => {
                 `}
                 >
                   <img
-                    src={`${process.env.REACT_APP_STRAPI_API_URL}${media.url}`}
-                    alt={media.name}
+                    src={media.url?.startsWith('http') ? media.url : media.url || ''}
+                    alt={media.name || 'Work media'}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>

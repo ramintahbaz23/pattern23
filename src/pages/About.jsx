@@ -9,10 +9,12 @@ const About = () => {
   const { data: response } = useInfoData();
   const infoData = response?.data || [];
   const { data: settingResponse } = useSettingsData();
-  const settingsData = settingResponse?.data || [];
+  const settingsData = settingResponse?.data || null;
 
-  // Sort infoData based on OrderNo
-  const sortedInfoData = [...infoData].sort((a, b) => a.OrderNo - b.OrderNo);
+  // Sort infoData based on OrderNo (if available)
+  const sortedInfoData = infoData && infoData.length > 0 
+    ? [...infoData].sort((a, b) => (a.OrderNo || 0) - (b.OrderNo || 0))
+    : [];
 
   return (
     <>

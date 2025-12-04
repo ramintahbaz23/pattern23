@@ -1,31 +1,34 @@
-import { useQuery } from '@tanstack/react-query';
-import { strapiService } from '../services/api';
+// Data hooks - returning empty data gracefully
+// These hooks maintain the same interface but return null/empty data instead of making API calls
 
-const useStrapiData = (queryKey, fetchFn) => {
-  return useQuery({
-    queryKey: [queryKey],
-    queryFn: fetchFn,
-    staleTime: Infinity,
-    gcTime: Infinity,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    refetchOnReconnect: false,
-    suspense: false,
-    retry: false,
-  });
+const returnEmptyData = () => ({ data: null });
+
+export const useHomeData = () => {
+  return { data: { data: null } };
 };
 
-export const useHomeData = () => useStrapiData('home', strapiService.getHomePage);
-export const useInfoData = () => useStrapiData('info', strapiService.getInfo);
-export const useGlobalData = () => useStrapiData('global', strapiService.getGlobalData);
-export const useAwardsData = () => useStrapiData('awards', strapiService.getAwards);
-export const useWorksData = () => useStrapiData('works', strapiService.getWorks);
-export const useSettingsData = () => useStrapiData('setting', strapiService.getSettings);
+export const useInfoData = () => {
+  return { data: { data: [] } };
+};
+
+export const useGlobalData = () => {
+  return { data: { data: null } };
+};
+
+export const useAwardsData = () => {
+  return { data: { data: null } };
+};
+
+export const useWorksData = () => {
+  return { data: { data: [] } };
+};
+
+export const useSettingsData = () => {
+  return { data: { data: null } };
+};
 
 export const useWorkData = (slug) => {
   const { data: worksData } = useWorksData();
   const work = worksData?.data?.find(work => work.slug === slug);
-  return { data: { data: work } };
+  return { data: { data: work || null } };
 };
-
-export default useStrapiData;

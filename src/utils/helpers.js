@@ -11,8 +11,8 @@ export const formatDate = (dateString, options = {
 // Image handling utilities
 export const getImageUrl = (image) => {
   if (!image) return '';
-  const baseUrl = process.env.REACT_APP_STRAPI_API_URL?.trim();
-  return image.startsWith('http') ? image : `${baseUrl}${image}`;
+  // Return image URL as-is if it's already a full URL, otherwise return empty
+  return image.startsWith('http') ? image : image;
 };
 
 // Performance utilities
